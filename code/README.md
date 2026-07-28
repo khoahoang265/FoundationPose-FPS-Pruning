@@ -3,8 +3,6 @@
 | File | Purpose |
 |---|---|
 | `pruning_study.ipynb` | Main experiment. Defines `eval_object()` (the measurement harness), `install_strategy()` (random / farthest / DINOv2 BoW dispatcher) and `farthest_indices()` (geodesic FPS). Produces the CSVs in `../results/`. |
-| `model_based_dinov2.ipynb` | Builds the 504-template DINOv2 patch bank and BoW index; model-based setting. |
-| `model_free_dinov2.ipynb` | Same pipeline with a neural object field mesh instead of CAD. |
 | `make_figures.py` | Regenerates Figs. 3–6 from `../results/*.csv`. |
 | `make_figures_extra.py` | Regenerates the pipeline diagram and the covering-radius figure. |
 
