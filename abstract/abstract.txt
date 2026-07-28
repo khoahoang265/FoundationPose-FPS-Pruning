@@ -1,0 +1,16 @@
+TITLE
+Farthest-Point Hypothesis Pruning for Fast Frame-0 Registration in FoundationPose
+
+AUTHORS
+Pham Duc Duong, Hoang Minh Khoa, Nguyen Dinh Cao Minh, Nguyen Gia Binh,
+Tran Huu Loc, Bien Minh Tri, Chan Dai Truyen Thai
+
+AFFILIATION
+Department of Electrical and Computer Engineering
+Vietnamese-German University (VGU), Vietnam
+
+ABSTRACT (177 words)
+FoundationPose registers a novel object on the first video frame by refining and scoring a fixed grid of 252 pose hypotheses; this step dominates initialization latency. This study focuses on how few hypotheses are needed and how they should be selected. From a fixed pool of 504 rendered templates, this paper compares three selection strategies which are uniform random, geodesic farthest-point sampling (FPS), and DINOv2 bag-of-words retrieval. These strategies feed the same FoundationPose refiner and scorer, and are evaluated on 21 YCB-Video objects with ADD/ADD-S against ground truth. Against the full 252-hypothesis grid, FPS with 𝐾=20 reaches 97.5% ADD-S against the grid’s 98.8% at about nine times lower latency, and matches it exactly (98.8%) at 𝐾=50; across all 21 objects it attains 99.4% at 𝐾=20. In contrast, DINOv2 bag-of-words retrieval underperforms even random selection for 𝐾 ≥ 5, because bag-of-words ranking is not viewpoint-discriminative and concentrates hypotheses by appearance rather than covering the rotation space. Registration time follows 𝑡 ≈ 192 + 17.0𝐾 ms. We provide operating recommendations and a failure analysis on small and symmetric objects.
+
+KEYWORDS
+6D object pose estimation, FoundationPose, hypothesis pruning, farthest-point sampling, DI- NOv2, render-and-compare, YCB-Video.

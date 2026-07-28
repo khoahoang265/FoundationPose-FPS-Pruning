@@ -1,0 +1,42 @@
+% !TeX program = xelatex
+% =====================================================================
+%  ABSTRACT DOC LAP -- dung de NOP HOI NGHI (abstract submission)
+%  Compile: XeLaTeX  (de hien dau tieng Viet trong ten tac gia)
+% =====================================================================
+\documentclass[11pt,letterpaper]{article}
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\usepackage{unicode-math}
+\setmathfont{TeX Gyre Termes Math}
+\usepackage{amsmath}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{center}
+{\large\bfseries Farthest-Point Hypothesis Pruning for Fast\\[2pt]
+Frame-0 Registration in FoundationPose\par}
+\vspace{10pt}
+{\normalsize Phạm Đức Dương, Hoàng Minh Khoa, Nguyễn Đình Cao Minh, Nguyễn Gia Bình,\\
+Trần Hữu Lộc, Biện Minh Trí, Chan Dai Truyen Thai\par}
+\vspace{6pt}
+{\small\itshape Department of Electrical and Computer Engineering\\
+Vietnamese-German University (VGU), Vietnam\par}
+\end{center}
+
+\vspace{14pt}
+\hrule
+\vspace{12pt}
+
+{\bfseries Abstract}\\[6pt]
+FoundationPose registers a novel object on the first video frame by refining and scoring a fixed grid of 252 pose hypotheses; this step dominates initialization latency. This study focuses on how few hypotheses are needed and how they should be selected. From a fixed pool of 504 rendered templates, this paper compares three selection strategies which are uniform random, geodesic farthest-point sampling (FPS), and DINOv2 bag-of-words retrieval. These strategies feed the same FoundationPose refiner and scorer, and are evaluated on 21 YCB-Video objects with ADD/ADD-S against ground truth. Against the full 252-hypothesis grid, FPS with $K{=}20$ reaches 97.5\% ADD-S against the grid's 98.8\% at about nine times lower latency, and matches it exactly (98.8\%) at $K{=}50$; across all 21 objects it attains 99.4\% at $K{=}20$. In contrast, DINOv2 bag-of-words retrieval underperforms even random selection for $K \ge 5$, because bag-of-words ranking is not viewpoint-discriminative and concentrates hypotheses by appearance rather than covering the rotation space. Registration time follows $t \approx 192 + 17.0K$ ms. We provide operating recommendations and a failure analysis on small and symmetric objects.
+\par\vspace{4pt}
+
+\vspace{12pt}
+{\bfseries Keywords:} 6D object pose estimation, FoundationPose, hypothesis pruning,
+farthest-point sampling, DINOv2, render-and-compare, YCB-Video.
+
+\end{document}
